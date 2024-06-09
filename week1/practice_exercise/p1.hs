@@ -23,3 +23,9 @@ myProduct = foldr (*) 1
 
 myMap :: ( a -> b ) -> [a] -> [b]
 myMap f = foldr (\x -> (f x :)) []
+
+{-
+Define foldl with foldr
+-}
+
+foldl' = foldr (\x -> (f x :)) []
