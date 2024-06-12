@@ -28,4 +28,11 @@ myMap f = foldr (\x -> (f x :)) []
 Define foldl with foldr
 -}
 
-foldl' = foldr (\x -> (f x :)) []
+-- foldl' = foldr (\x -> (f x :)) []
+
+length' xs = sum [ 1 | _ <- xs]
+
+removeNonUppercase xs = [ x | x <- xs, x `elem` ['A' .. 'Z']]
+
+xxs = [[1,3,5,2,3,1,2,4,5],[1,2,3,4,5,6,7,8,9],[1,2,4,2,1,6,3,1,3,2,3,6]]
+[ [ x | x <- xs, odd x] | xs <- xxs ]
