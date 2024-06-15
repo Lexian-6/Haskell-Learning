@@ -110,3 +110,15 @@ calcBmis'''' xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2, bmi >= 25.0]
 -- We can also use let in, but the scope would be restricted in that prediate
 calcBmis''''' :: (RealFloat a) => [(a, a)] -> [a]
 calcBmis''''' xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2 in bmi >= 25.0, let bmi = w / h ^ 2]
+
+-- Case expression
+describeList :: [a] -> String
+describeList xs = "The list is " ++ case xs of  [] -> "empty."
+                                                [x] -> "list with one element."
+                                                xs -> "list with more than one elements"
+
+describeList' :: [a] -> String
+describeList' xs = "The list is " ++ what xs
+    where   what [] = "empty."
+            what [xs] = "list with one element."
+            what xs = "list with more than one elements"
